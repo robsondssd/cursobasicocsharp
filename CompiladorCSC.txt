@@ -1,0 +1,42 @@
+
+Este artigo foi traduzido por máquina. Coloque o ponteiro do mouse sobre as frases do artigo para ver o texto original. Mais informações.
+Tradução Original
+Compilação pela linha de comando com csc.exe
+
+Visual Studio 2015 Outras versões 
+Você pode invocar o compilador C# digitando o nome do arquivo executável (csc.exe) em um prompt de comando.
+Se você usar a janela de Prompt de Comando Visual Studio , todas as variáveis de ambiente necessários são definidos para você. No Windows 7, você pode acessar essa janela no menu de Iniciar abra a pasta Microsoft Visual Studio Version\ Visual Studio Tools. No Windows 8, o prompt de comando do Visual Studio é chamado Prompt de Comando do Desenvolvedor para VS2012, e você pode descobrir pesquisando desde o início da tela.
+Se você usar uma janela de prompt de comando padrão, você deve ajustar seu caminho para que você possa chamar csc.exe de qualquer subdiretório em seu computador. Você também deve executar vsvars32.bat para definir as variáveis de ambiente apropriadas para oferecer suporte a construções de linha de comando. Para obter mais informações sobre como vsvars32.bat, incluindo instruções sobre como localizar e execução, consulta Como: configurar variáveis de ambiente para a linha de comando do Visual Studio.
+Se você estiver trabalhando em um computador que tenha apenas Windows Software Development Kit (SDK), você pode usar o compilador C# em Prompt de comando do SDK, que você abre da opção de menu de Microsoft.NET Framework SDK .
+Você também pode usar MSBuild para criar programaticamente programas C#. Para mais informação, veja MSBuild.
+O arquivo executável de csc.exe está localizado em geral em Microsoft.NET \ framework \ pasta deVersion no diretório do Windows. O local pode variar dependendo da configuração precisa de um computador específico. Se mais de uma versão do.NET Framework é instalado no computador, você encontrará várias versões desse arquivo. Para obter mais informações sobre como essas instalações, consulte Determinando qual versão do .NET Framework está instalada.
+Dica Dica
+Quando você cria um projeto do usando o Visual Studio IDE, você pode exibir o comando de csc e seus padrões associados do compilador na janela de Saída . Para exibir essas informações, siga as instruções em Como ver, salvar e configurar arquivos de log de compilação para alterar a verbosity em nível de dados de log a Normal ou a Detalhado. Depois de recriar seu projeto, pesquise a janela de Saída por csc para localizar a invocação do compilador C#.
+Neste tópico
+Regras da sintaxe de linha de comando
+Linhas de comando de exemplo
+Diferenças entre as Saídas dos Compiladores de C# e C++
+Regras para Sintaxe da Linha de Comando para o Compilador C#
+O compilador C# usa as seguintes regras a interpretação dos argumentos dados na linha de comando do sistema operacional:
+Os argumentos são delimitados por espaço em branco, que é um espaço ou uma guia.
+O caractere de acento circunflexo (^) não é reconhecido como um caractere de escape ou um delimitador. O caractere será tratado pelo analisador de linha de comando no sistema operacional antes de ser passada para a matriz de argv no programa.
+Uma cadeia de caracteres incluída entre aspas duplas (“cadeia de caracteres”) são interpretadas como um único argumento, independentemente do espaço em branco que está contido no. Uma cadeia de caracteres entre aspas pode ser inserida em um argumento.
+Aspas duplas precedidas por uma barra invertida (\) " são interpretados como um caractere literal aspas duplas (").
+As barras invertidas são interpretadas literal, a menos que precederem imediatamente aspas duplas.
+Se um número de barras invertidas mesmo é seguido por aspas duplas, uma barra invertida é colocada na matriz de argv para cada par de barras invertidas, e aspas duplas são interpretadas como um delimitador de cadeia de caracteres.
+Se um número ímpar de barras invertidas é seguido por aspas duplas, uma barra invertida é colocada na matriz de argv para cada par de barras invertidas, e aspas duplas “são ignoradas” pela barra invertida restante. Isso faz com que as literais aspas duplas (") a ser adicionadas em argv.
+Linhas de Comando de Exemplo para o Compilador C#
+Cria File.cs gerando File.exe:
+csc File.cs 
+Cria File.cs gerando File.dll:
+csc /target:library File.cs
+Cria File.cs e cria My.exe:
+csc /out:My.exe File.cs
+Cria todos os arquivos C# no diretório atual, com otimizações sobre e o símbolo de DEBUG. A saída é File2.exe:
+csc /define:DEBUG /optimize /out:File2.exe *.cs
+Cria todos os arquivos C# no diretório atual gerando uma versão de depuração de File2.dll. Nenhum logotipo e nenhum aviso são exibidos:
+csc /target:library /out:File2.dll /warn:0 /nologo /debug *.cs
+Cria todos os arquivos C# no diretório atual a Something.xyz (DLL):
+csc /target:library /out:Something.xyz *.cs
+
+asa
