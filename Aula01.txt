@@ -1,0 +1,20 @@
+/*Tipos de dados*/
+
+/* Tipos de dados inteiros = 0  9 formando conbinaes infinitas*/
+/* Tipos de dados strings = A a Z */
+/* Tipos de dados fracionados = 0,0 a 9,9 formando conbinaes infinitas */
+
+/*Declaraoes*/
+
+/*Para inteiros = int*/
+/*Para textos =  String*/
+/*Para Numeros Fracionados = double*/
+
+int num = 5;
+int num2 = 100;
+double soma,num3 = 0.99;
+
+soma =(num+num2+num3);
+
+Console.WriteLine(A soma dos valores  = +soma);
+Console.ReadKey();

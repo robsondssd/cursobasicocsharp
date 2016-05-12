@@ -1,0 +1,42 @@
+string nomeH, nomeM;
+int idadeH, idadeM, soma;
+
+Console.WriteLine("Informe nome do Homen");
+nomeH = Console.ReadLine();
+Console.WriteLine("Informe nome da Mulher");
+nomeM = Console.ReadLine();
+Console.WriteLine("Informe a idade do "+nomeH);
+idadeH = int.Parse(Console.ReadLine());
+Console.WriteLine("Informe a idade da "+nomeM);
+idadeM = int.Parse(Console.ReadLine());
+
+Console.WriteLine("A " + nomeM + " tem " + idadeM + " Anos");
+
+Console.WriteLine("O " + nomeH + " tem " + idadeH + " Anos");
+
+soma = idadeH + idadeM;
+
+Console.Write("A soma das idades de " + nomeH + " e da " + nomeM + " é " + soma);
+
+Console.ReadKey();
+
+String nomeH, nomeM, idadeH, idadeM;
+
+Console.WriteLine("Informe nome do Homen");
+nomeH = Console.ReadLine();
+Console.WriteLine("Informe nome da Mulher");
+nomeM = Console.ReadLine();
+Console.WriteLine("Informe a idade do Homen");
+idadeH = Console.ReadLine();
+Console.WriteLine("Informe a idade da Mulher");
+idadeM = Console.ReadLine();
+
+Console.WriteLine("A "+nomeM+" tem "+idadeM+" Anos");
+
+Console.WriteLine("O " + nomeH + " tem " + idadeH + " Anos");
+
+int soma = Convert.ToInt16(idadeH) + Convert.ToInt16(idadeM);
+
+Console.Write("A soma das idades de " + nomeH + " e da "+nomeM+" é "+soma);
+
+Console.ReadKey();

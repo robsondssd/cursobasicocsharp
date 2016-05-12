@@ -1,0 +1,11 @@
+int num, resp;
+Console.WriteLine("Informe um numero para tabuada");
+num = int.Parse(Console.ReadLine());
+
+for (int i = 10; i >= 0; i--)
+{
+resp = num * i;
+
+Console.WriteLine(num+" x "+i+" = "+resp);
+}
+Console.ReadKey();

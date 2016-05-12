@@ -1,0 +1,12 @@
+string nome;
+int idade;
+
+Console.WriteLine(“Informe seu Nome.:: “);
+nome = Console.ReadLine();
+
+Console.WriteLine(“Informe sua Idade.:: “);
+idade = int.Parse(Console.ReadLine());
+
+Console.WriteLine(“Meu nome é “+nome+” e tenho “+idade+” Anos”);
+
+Console.ReadKey();
